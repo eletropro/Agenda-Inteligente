@@ -11,62 +11,78 @@ const ai = new GoogleGenAI({
   },
 });
 
-export async function transcribeAudio(audioBase64: string, mimeType: string = 'audio/webm'): Promise<string> {
+export async function transcribeAudio(
+  audioBase64: string,
+  mimeType: string = 'audio/webm',
+  clientTranscript?: string
+): Promise<string> {
+  // If client transcript already captured via browser Web Speech API, keep as fallback
+  const validClientTranscript = clientTranscript?.trim();
+
   if (!process.env.GEMINI_API_KEY) {
+    if (validClientTranscript) return validClientTranscript;
     throw new Error('GEMINI_API_KEY não configurada no servidor.');
   }
 
+  const cleanMimeType = (mimeType || 'audio/webm').split(';')[0].trim();
+  const audioPart = {
+    inlineData: {
+      mimeType: cleanMimeType || 'audio/webm',
+      data: audioBase64,
+    },
+  };
+
+  // 1. Try gemini-3.5-transcribe with standard parts structure
   try {
-    // Clean mimeType if it contains codec params like audio/webm;codecs=opus
-    const cleanMimeType = mimeType.split(';')[0].trim();
-
-    const audioPart = {
-      inlineData: {
-        mimeType: cleanMimeType || 'audio/webm',
-        data: audioBase64,
-      },
-    };
-
     const response = await ai.models.generateContent({
       model: 'gemini-3.5-transcribe',
-      contents: [
-        audioPart,
-        {
-          text: 'Transcreva este áudio com precisão para o português brasileiro. Retorne APENAS o texto falado, sem introduções, aspas ou explicações.',
-        },
-      ],
+      contents: {
+        parts: [
+          audioPart,
+          {
+            text: 'Transcreva este áudio com precisão para o português brasileiro. Retorne APENAS o texto falado, sem introduções, aspas ou explicações.',
+          },
+        ],
+      },
     });
 
     const transcription = response.text?.trim() || '';
-    if (!transcription) {
-      throw new Error('Não foi possível identificar nenhuma fala no áudio enviado.');
+    if (transcription) {
+      return transcription;
     }
-    return transcription;
   } catch (err: any) {
-    console.error('Transcription error with gemini-3.5-transcribe:', err);
-    // Try fallback to gemini-3.8-flash for audio
-    try {
-      const cleanMimeType = mimeType.split(';')[0].trim();
-      const response = await ai.models.generateContent({
-        model: 'gemini-3.8-flash',
-        contents: [
+    console.warn('Transcription error with gemini-3.5-transcribe:', err?.message || err);
+  }
+
+  // 2. Try gemini-flash-latest for multimodal audio
+  try {
+    const response = await ai.models.generateContent({
+      model: 'gemini-flash-latest',
+      contents: {
+        parts: [
+          audioPart,
           {
-            inlineData: {
-              mimeType: cleanMimeType || 'audio/webm',
-              data: audioBase64,
-            },
-          },
-          {
-            text: 'Transcreva este áudio em português brasileiro exatamente como foi falado. Retorne somente a transcrição.',
+            text: 'Transcreva este áudio em português brasileiro exatamente como foi falado. Retorne somente o texto da transcrição.',
           },
         ],
-      });
-      return response.text?.trim() || '';
-    } catch (fallbackErr: any) {
-      console.error('Audio transcription fallback error:', fallbackErr);
-      throw new Error(`Falha na transcrição do áudio: ${err.message || 'Erro desconhecido'}`);
+      },
+    });
+    const transcription = response.text?.trim() || '';
+    if (transcription) {
+      return transcription;
     }
+  } catch (err: any) {
+    console.warn('Transcription error with gemini-flash-latest:', err?.message || err);
   }
+
+  // 3. Fallback to client speech recognition if available
+  if (validClientTranscript) {
+    console.log('Using browser speech recognition transcript fallback:', validClientTranscript);
+    return validClientTranscript;
+  }
+
+  // 4. Friendly error message if completely silent or unparseable
+  throw new Error('Não foi possível reconhecer a fala no áudio. Fale mais claramente ou use o campo de texto.');
 }
 
 export async function processVoiceOrTextIntent(
@@ -136,7 +152,7 @@ Retorne um JSON estrito de acordo com o esquema.`;
     );
 
     const callPromise = ai.models.generateContent({
-      model: 'gemini-3.8-flash',
+      model: 'gemini-flash-latest',
       contents: prompt,
       config: {
         systemInstruction,

@@ -27,13 +27,22 @@ scheduler.start();
 // 1. Process Voice Audio (Transcribe + Semantic Parsing)
 app.post('/api/ai/process-voice', async (req, res) => {
   try {
-    const { audioBase64, mimeType, currentDateISO, timezone } = req.body;
-    if (!audioBase64) {
-      return res.status(400).json({ error: 'Nenhum dado de áudio fornecido.' });
+    const { audioBase64, mimeType, currentDateISO, timezone, clientTranscript } = req.body;
+    if (!audioBase64 && !clientTranscript) {
+      return res.status(400).json({ error: 'Nenhum dado de áudio ou texto falado fornecido.' });
     }
 
-    // Step 1: Transcribe audio to Portuguese
-    const transcription = await transcribeAudio(audioBase64, mimeType || 'audio/webm');
+    // Step 1: Transcribe audio to Portuguese (with clientTranscript fallback)
+    let transcription = '';
+    try {
+      transcription = await transcribeAudio(audioBase64 || '', mimeType || 'audio/webm', clientTranscript);
+    } catch (transcribeErr: any) {
+      if (clientTranscript && clientTranscript.trim()) {
+        transcription = clientTranscript.trim();
+      } else {
+        throw transcribeErr;
+      }
+    }
     
     // Step 2: Semantic Intent Parsing & Appointment Extraction
     const result = await processVoiceOrTextIntent(

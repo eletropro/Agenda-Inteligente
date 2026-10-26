@@ -18,8 +18,8 @@
       "reminderTime": "2026-10-26T08:00:00.000Z",
       "reminderStatus": "pendente",
       "recurrence": "none",
-      "createdAt": "2026-10-26T20:27:25.805Z",
-      "updatedAt": "2026-10-26T20:27:25.805Z"
+      "createdAt": "2026-10-26T20:41:29.360Z",
+      "updatedAt": "2026-10-26T20:41:29.360Z"
     },
     {
       "id": "demo-2",
@@ -39,11 +39,11 @@
       "reminderTime": "2026-10-27T14:00:00.000Z",
       "reminderStatus": "pendente",
       "recurrence": "none",
-      "createdAt": "2026-10-26T20:27:25.805Z",
-      "updatedAt": "2026-10-26T20:27:25.805Z"
+      "createdAt": "2026-10-26T20:41:29.360Z",
+      "updatedAt": "2026-10-26T20:41:29.360Z"
     },
     {
-      "id": "ev-1793046445820-7qs9j",
+      "id": "ev-1793047289362-w91qe",
       "title": "Visita Técnica Teste",
       "serviceType": "visita_tecnica",
       "date": "2026-10-29",
@@ -60,11 +60,11 @@
       "reminderTime": "2026-10-28T10:00:00.000Z",
       "reminderStatus": "pendente",
       "recurrence": "none",
-      "createdAt": "2026-10-26T20:27:25.820Z",
-      "updatedAt": "2026-10-26T20:27:25.820Z"
+      "createdAt": "2026-10-26T20:41:29.362Z",
+      "updatedAt": "2026-10-26T20:41:29.362Z"
     },
     {
-      "id": "ev-1793046445842-1q7cy",
+      "id": "ev-1793047289374-r84us",
       "title": "Visita 1 - Cliente A",
       "serviceType": "visita_tecnica",
       "date": "2026-11-01",
@@ -81,11 +81,11 @@
       "reminderTime": "2026-10-31T09:00:00.000Z",
       "reminderStatus": "pendente",
       "recurrence": "none",
-      "createdAt": "2026-10-26T20:27:25.842Z",
-      "updatedAt": "2026-10-26T20:27:25.842Z"
+      "createdAt": "2026-10-26T20:41:29.374Z",
+      "updatedAt": "2026-10-26T20:41:29.374Z"
     },
     {
-      "id": "ev-1793046445843-jux96",
+      "id": "ev-1793047289375-s8tpx",
       "title": "Visita 2 - Cliente B",
       "serviceType": "visita_tecnica",
       "date": "2026-11-01",
@@ -102,8 +102,8 @@
       "reminderTime": "2026-10-31T14:00:00.000Z",
       "reminderStatus": "pendente",
       "recurrence": "none",
-      "createdAt": "2026-10-26T20:27:25.843Z",
-      "updatedAt": "2026-10-26T20:27:25.843Z"
+      "createdAt": "2026-10-26T20:41:29.375Z",
+      "updatedAt": "2026-10-26T20:41:29.375Z"
     }
   ],
   "settings": {
@@ -115,6 +115,60 @@
     "theme": "light"
   },
   "auditLogs": [
+    {
+      "id": "audit-1793047289375-t2no",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T20:41:29.375Z"
+    },
+    {
+      "id": "audit-1793047289374-27n9",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T20:41:29.374Z"
+    },
+    {
+      "id": "audit-1793047289373-bze6",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T20:41:29.373Z"
+    },
+    {
+      "id": "audit-1793047289370-3q7a",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T20:41:29.370Z"
+    },
+    {
+      "id": "audit-1793047289369-b1xc",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T20:41:29.369Z"
+    },
+    {
+      "id": "audit-1793047289364-ez2j",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T20:41:29.364Z"
+    },
+    {
+      "id": "audit-1793047289362-uco7",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T20:41:29.362Z"
+    },
+    {
+      "id": "audit-1793047289360-tnrr",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T20:41:29.360Z"
+    },
+    {
+      "id": "audit-1793046586709-1i7k",
+      "action": "REMINDER_TRIGGER",
+      "details": "Lembrete marcado como 'enviado' para: Visita técnica — Fulano",
+      "timestamp": "2026-10-26T20:29:46.709Z"
+    },
     {
       "id": "audit-1793046445843-2vvs",
       "action": "CREATE_EVENT",

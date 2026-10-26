@@ -112,7 +112,7 @@ export const VoiceActionModal: React.FC<VoiceActionModalProps> = ({
     setProcessingStatus('Transcrevendo áudio com IA...');
 
     try {
-      const result = await ApiClient.processVoice(base64, audioMimeType, timezone);
+      const result = await ApiClient.processVoice(base64, audioMimeType, timezone, liveTranscript);
       setProcessingStatus('Processando compromissos...');
       onProcessSuccess(result);
       handleClose();

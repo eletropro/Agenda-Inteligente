@@ -31,7 +31,12 @@ export class ApiClient {
   }
 
   // AI Voice Processing
-  public static async processVoice(audioBase64: string, mimeType: string, timezone: string): Promise<VoiceProcessResult> {
+  public static async processVoice(
+    audioBase64: string,
+    mimeType: string,
+    timezone: string,
+    clientTranscript?: string
+  ): Promise<VoiceProcessResult> {
     return this.request<VoiceProcessResult>('/api/ai/process-voice', {
       method: 'POST',
       body: JSON.stringify({
@@ -39,6 +44,7 @@ export class ApiClient {
         mimeType,
         currentDateISO: new Date().toISOString(),
         timezone,
+        clientTranscript: clientTranscript || '',
       }),
     });
   }

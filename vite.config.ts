@@ -43,9 +43,12 @@ export default defineConfig(() => {
             },
           ],
         },
+        workbox: {
+          navigateFallbackDenylist: [/^\/api/],
+          globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        },
         devOptions: {
-          enabled: true,
-          type: 'module',
+          enabled: false,
         },
       }),
     ],
