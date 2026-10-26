@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Calendar Card -->
+  <g filter="url(#shadow)">
+    <!-- Calendar Body -->
+    <rect x="96" y="100" width="320" height="300" rx="36" fill="#ffffff" />
+    <!-- Calendar Header -->
+    <path d="M 96 136 C 96 116 112 100 132 100 L 380 100 C 400 100 416 116 416 136 L 416 172 L 96 172 Z" fill="#1e40af" />
+
+    <!-- Calendar Rings -->
+    <rect x="160" y="80" width="16" height="40" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+    <rect x="336" y="80" width="16" height="40" rx="8" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2" />
+
+    <!-- Calendar Grid Dots -->
+    <circle cx="160" cy="220" r="10" fill="#94a3b8" />
+    <circle cx="216" cy="220" r="10" fill="#94a3b8" />
+    <circle cx="272" cy="220" r="10" fill="#94a3b8" />
+    <circle cx="328" cy="220" r="10" fill="#94a3b8" />
+
+    <circle cx="160" cy="270" r="10" fill="#94a3b8" />
+    <circle cx="216" cy="270" r="10" fill="#3b82f6" />
+    <circle cx="272" cy="270" r="10" fill="#3b82f6" />
+    <circle cx="328" cy="270" r="10" fill="#94a3b8" />
+
+    <circle cx="160" cy="320" r="10" fill="#94a3b8" />
+    <circle cx="216" cy="320" r="10" fill="#94a3b8" />
+    <circle cx="272" cy="320" r="10" fill="#10b981" />
+    <circle cx="328" cy="320" r="10" fill="#94a3b8" />
+  </g>
+
+  <!-- Microphone Badge Overlay -->
+  <g filter="url(#shadow)" transform="translate(300, 280)">
+    <circle cx="70" cy="70" r="64" fill="url(#accentGrad)" stroke="#ffffff" stroke-width="6" />
+    <!-- Microphone Shape -->
+    <rect x="58" y="44" width="24" height="40" rx="12" fill="#ffffff" />
+    <path d="M 48 64 C 48 78 60 88 70 88 C 80 88 92 78 92 64" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+    <line x1="70" y1="88" x2="70" y2="102" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+    <line x1="58" y1="102" x2="82" y2="102" stroke="#ffffff" stroke-width="5" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda Inteligente por Voz</title>
+    <meta name="description" content="Aplicativo completo de agenda inteligente com gravação e comando por voz, organização automática de compromissos e lembretes sonoros." />
+    <meta property="og:title" content="Agenda Inteligente por Voz" />
+    <meta property="og:description" content="Aplicativo completo de agenda inteligente com gravação e comando por voz, organização automática de compromissos e lembretes sonoros." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="AgendaVoz" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script>
+      // Suppress Vite HMR WebSocket errors in AI Studio iframe environment where HMR is disabled
+      (function() {
+        window.addEventListener('error', function(event) {
+          if (
+            event &&
+            (
+              (event.message && (
+                event.message.includes('WebSocket') ||
+                event.message.includes('ws://') ||
+                event.message.includes('wss://') ||
+                event.message.includes('@vite/client')
+              )) ||
+              (event.filename && event.filename.includes('@vite/client'))
+            )
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (
+            event && event.reason &&
+            (
+              (typeof event.reason === 'string' && event.reason.includes('WebSocket')) ||
+              (typeof event.reason.message === 'string' && (
+                event.reason.message.includes('WebSocket') ||
+                event.reason.message.includes('ws://') ||
+                event.reason.message.includes('wss://')
+              ))
+            )
+          ) {
+            event.stopImmediatePropagation();
+            event.preventDefault();
+          }
+        });
+
+        const OriginalWS = window.WebSocket;
+        if (OriginalWS) {
+          window.WebSocket = function(url, protocols) {
+            const ws = new OriginalWS(url, protocols);
+            ws.addEventListener('error', function(err) {
+              if (err && typeof err.stopImmediatePropagation === 'function') {
+                err.stopImmediatePropagation();
+              }
+            });
+            return ws;
+          };
+          window.WebSocket.prototype = OriginalWS.prototype;
+          window.WebSocket.CONNECTING = OriginalWS.CONNECTING;
+          window.WebSocket.OPEN = OriginalWS.OPEN;
+          window.WebSocket.CLOSING = OriginalWS.CLOSING;
+          window.WebSocket.CLOSED = OriginalWS.CLOSED;
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

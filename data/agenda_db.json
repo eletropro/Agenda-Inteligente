@@ -1,0 +1,389 @@
+{
+  "events": [
+    {
+      "id": "demo-1",
+      "title": "Visita técnica — Fulano",
+      "serviceType": "visita_tecnica",
+      "date": "2026-10-27",
+      "startTime": "08:00",
+      "endTime": "09:30",
+      "clientName": "Fulano Silva",
+      "clientPhone": "(61) 98765-4321",
+      "location": "Águas Claras, Edifício Boulevard, Sala 402",
+      "description": "Inspeção e diagnóstico de equipamento predial",
+      "notes": "Trazer kit de chaves e multímetro.",
+      "priority": "alta",
+      "status": "pendente",
+      "reminderLeadTime": "24h",
+      "reminderTime": "2026-10-26T08:00:00.000Z",
+      "reminderStatus": "pendente",
+      "recurrence": "none",
+      "createdAt": "2026-10-26T20:13:39.531Z",
+      "updatedAt": "2026-10-26T20:13:39.531Z"
+    },
+    {
+      "id": "demo-2",
+      "title": "Reunião comercial — João",
+      "serviceType": "reuniao",
+      "date": "2026-10-28",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "clientName": "João Santos",
+      "clientPhone": "(61) 99888-1122",
+      "location": "Escritório Central - Sala de Conferência",
+      "description": "Apresentação da proposta de manutenção preventiva",
+      "notes": "Levar cópias do contrato.",
+      "priority": "media",
+      "status": "pendente",
+      "reminderLeadTime": "24h",
+      "reminderTime": "2026-10-27T14:00:00.000Z",
+      "reminderStatus": "pendente",
+      "recurrence": "none",
+      "createdAt": "2026-10-26T20:13:39.531Z",
+      "updatedAt": "2026-10-26T20:13:39.531Z"
+    },
+    {
+      "id": "ev-1793045619533-g51ro",
+      "title": "Visita Técnica Teste",
+      "serviceType": "visita_tecnica",
+      "date": "2026-10-29",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "clientName": "Cliente Conflito",
+      "clientPhone": "",
+      "location": "Águas Claras",
+      "description": "",
+      "notes": "",
+      "priority": "alta",
+      "status": "pendente",
+      "reminderLeadTime": "24h",
+      "reminderTime": "2026-10-28T10:00:00.000Z",
+      "reminderStatus": "pendente",
+      "recurrence": "none",
+      "createdAt": "2026-10-26T20:13:39.533Z",
+      "updatedAt": "2026-10-26T20:13:39.533Z"
+    },
+    {
+      "id": "ev-1793045619536-vv5p8",
+      "title": "Visita 1 - Cliente A",
+      "serviceType": "visita_tecnica",
+      "date": "2026-11-01",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "clientName": "Cliente A",
+      "clientPhone": "",
+      "location": "Local A",
+      "description": "",
+      "notes": "",
+      "priority": "media",
+      "status": "pendente",
+      "reminderLeadTime": "24h",
+      "reminderTime": "2026-10-31T09:00:00.000Z",
+      "reminderStatus": "pendente",
+      "recurrence": "none",
+      "createdAt": "2026-10-26T20:13:39.536Z",
+      "updatedAt": "2026-10-26T20:13:39.536Z"
+    },
+    {
+      "id": "ev-1793045619536-lenke",
+      "title": "Visita 2 - Cliente B",
+      "serviceType": "visita_tecnica",
+      "date": "2026-11-01",
+      "startTime": "14:00",
+      "endTime": "15:00",
+      "clientName": "Cliente B",
+      "clientPhone": "",
+      "location": "Local B",
+      "description": "",
+      "notes": "",
+      "priority": "media",
+      "status": "pendente",
+      "reminderLeadTime": "24h",
+      "reminderTime": "2026-10-31T14:00:00.000Z",
+      "reminderStatus": "pendente",
+      "recurrence": "none",
+      "createdAt": "2026-10-26T20:13:39.536Z",
+      "updatedAt": "2026-10-26T20:13:39.536Z"
+    }
+  ],
+  "settings": {
+    "timezone": "America/Sao_Paulo",
+    "defaultReminderLeadTime": "24h",
+    "enableSound": true,
+    "enableWebNotifications": true,
+    "soundVolume": 0.8,
+    "theme": "light"
+  },
+  "auditLogs": [
+    {
+      "id": "audit-1793045619537-0l5s",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T20:13:39.537Z"
+    },
+    {
+      "id": "audit-1793045619536-zosz",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T20:13:39.536Z"
+    },
+    {
+      "id": "audit-1793045619536-92da",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T20:13:39.536Z"
+    },
+    {
+      "id": "audit-1793045619535-nh2n",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T20:13:39.535Z"
+    },
+    {
+      "id": "audit-1793045619535-0eqx",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T20:13:39.535Z"
+    },
+    {
+      "id": "audit-1793045619534-i98p",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T20:13:39.534Z"
+    },
+    {
+      "id": "audit-1793045619533-iczs",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T20:13:39.533Z"
+    },
+    {
+      "id": "audit-1793045619531-b2aa",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T20:13:39.531Z"
+    },
+    {
+      "id": "audit-1793045572146-2cuu",
+      "action": "REMINDER_TRIGGER",
+      "details": "Lembrete marcado como 'enviado' para: Visita técnica — Fulano",
+      "timestamp": "2026-10-26T20:12:52.146Z"
+    },
+    {
+      "id": "audit-1793045572143-efgd",
+      "action": "REMINDER_TRIGGER",
+      "details": "Lembrete marcado como 'enviado' para: Visita técnica — Fulano",
+      "timestamp": "2026-10-26T20:12:52.143Z"
+    },
+    {
+      "id": "audit-1793045345301-6t38",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T20:09:05.301Z"
+    },
+    {
+      "id": "audit-1793044736659-edvr",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T19:58:56.659Z"
+    },
+    {
+      "id": "audit-1793044736659-nfi9",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T19:58:56.659Z"
+    },
+    {
+      "id": "audit-1793044736659-4te4",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T19:58:56.659Z"
+    },
+    {
+      "id": "audit-1793044736658-9973",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:58:56.658Z"
+    },
+    {
+      "id": "audit-1793044736658-mdpr",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:58:56.658Z"
+    },
+    {
+      "id": "audit-1793044736658-be4m",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T19:58:56.658Z"
+    },
+    {
+      "id": "audit-1793044736657-8tv8",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T19:58:56.657Z"
+    },
+    {
+      "id": "audit-1793044736656-n5t7",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:58:56.656Z"
+    },
+    {
+      "id": "audit-1793044562489-yehm",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:56:02.489Z"
+    },
+    {
+      "id": "audit-1793044468554-114i",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T19:54:28.554Z"
+    },
+    {
+      "id": "audit-1793044468553-0rmg",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T19:54:28.553Z"
+    },
+    {
+      "id": "audit-1793044468552-0v5k",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T19:54:28.552Z"
+    },
+    {
+      "id": "audit-1793044468551-lept",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:54:28.551Z"
+    },
+    {
+      "id": "audit-1793044468551-5mqe",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:54:28.551Z"
+    },
+    {
+      "id": "audit-1793044468551-rfe5",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T19:54:28.551Z"
+    },
+    {
+      "id": "audit-1793044468549-ljqq",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T19:54:28.549Z"
+    },
+    {
+      "id": "audit-1793044468541-80sh",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:54:28.541Z"
+    },
+    {
+      "id": "audit-1793044417459-8y1t",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T19:53:37.459Z"
+    },
+    {
+      "id": "audit-1793044417459-jzzq",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T19:53:37.459Z"
+    },
+    {
+      "id": "audit-1793044417459-eir7",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T19:53:37.459Z"
+    },
+    {
+      "id": "audit-1793044417458-f47u",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:53:37.458Z"
+    },
+    {
+      "id": "audit-1793044417458-ogh1",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:53:37.458Z"
+    },
+    {
+      "id": "audit-1793044417457-r6bg",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T19:53:37.457Z"
+    },
+    {
+      "id": "audit-1793044417456-p41q",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T19:53:37.456Z"
+    },
+    {
+      "id": "audit-1793044417451-9tq6",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:53:37.451Z"
+    },
+    {
+      "id": "audit-1793044374411-6vhz",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 2 - Cliente B em 2026-11-01 às 14:00",
+      "timestamp": "2026-10-26T19:52:54.411Z"
+    },
+    {
+      "id": "audit-1793044374410-z504",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita 1 - Cliente A em 2026-11-01 às 09:00",
+      "timestamp": "2026-10-26T19:52:54.410Z"
+    },
+    {
+      "id": "audit-1793044374407-h2wq",
+      "action": "DELETE_EVENT",
+      "details": "Compromisso excluído: Reunião Diretoria (2026-10-30)",
+      "timestamp": "2026-10-26T19:52:54.407Z"
+    },
+    {
+      "id": "audit-1793044374406-ihu8",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:52:54.406Z"
+    },
+    {
+      "id": "audit-1793044374406-9btv",
+      "action": "UPDATE_EVENT",
+      "details": "Compromisso atualizado: Reunião Diretoria (2026-10-30 16:30)",
+      "timestamp": "2026-10-26T19:52:54.406Z"
+    },
+    {
+      "id": "audit-1793044374405-f4n7",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Reunião Diretoria em 2026-10-30 às 15:00",
+      "timestamp": "2026-10-26T19:52:54.405Z"
+    },
+    {
+      "id": "audit-1793044374404-py0w",
+      "action": "CREATE_EVENT",
+      "details": "Compromisso criado: Visita Técnica Teste em 2026-10-29 às 10:00",
+      "timestamp": "2026-10-26T19:52:54.404Z"
+    },
+    {
+      "id": "audit-1793044374403-ner6",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:52:54.403Z"
+    },
+    {
+      "id": "audit-1793044374045-pwru",
+      "action": "SYSTEM_INIT",
+      "details": "Banco de dados inicializado com dados demonstrativos",
+      "timestamp": "2026-10-26T19:52:54.045Z"
+    }
+  ]
+}

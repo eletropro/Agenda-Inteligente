@@ -1,0 +1,10 @@
+{
+  "name": "Agenda Inteligente por Voz",
+  "description": "Aplicativo completo de agenda inteligente com gravação e comando por voz, organização automática de compromissos e lembretes sonoros.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
